@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  *{
+    @apply m-0 p-0 box-border;
+  }
+  body{
+    @apply dark:dark-gradient ;
+  }
+}
+
+@layer components{
+  .dark-gradient{
+    @apply bg-gradient-to-r dark:from-gray-900 dark:via-gray-900 dark:to-black font-Poppins
+  }
+  .dark-components{
+    @apply bg-slate-800
+  }
+  .box{
+    @apply dark:bg-slate-800/70 relative dark:text-white overflow-hidden backdrop-blur-[15px] p-5 rounded-lg;
+  }
+}
