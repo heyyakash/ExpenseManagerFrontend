@@ -1,11 +1,14 @@
 import React from 'react'
-import {LineController ,LineElement,PointElement} from 'chart.js'
+import LineSummary from './LineSummary'
+
 const Graph = () => {
+
   return (
-    <div className='px-10'>
-    <div className='box w-full'>
+    <div className='md:px-10  w-[300px] md:w-full'>
+      <div className='box w-full'>
         <h2 className='text-xl  font-semibold'>Overall Statistics</h2>
-    </div>
+       <LineSummary />
+      </div>
     </div>
   )
 }
