@@ -11,7 +11,6 @@ import Graph from './Graph'
 const Summary = () => {
     const queryClient = useQueryClient()
     const data=queryClient.getQueryData('spend') as res
-    const monthName = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     const [daily, setDaily] = useState<number | null>(null)
     const [monthly, setMontlhy] = useState<number | null>(null)
     const [yearly, setYearly] = useState<number | null>(null)
@@ -55,7 +54,7 @@ const Summary = () => {
             <div className="grid grid-cols-1 grid-rows-1 gap-6 place-items-center">
                 <div className='grid grid-cols-1 md:grid-cols-3 place-items-center gap-6 grid-rows-3 md:grid-rows-1 md:px-10'>
                     <Box title="Today"  display= {date} isLoading={isLoading} amount={daily?daily:0} arrowup={false} link="report" />
-                    <Box title={monthName[month-1]} display = {month} isLoading={isLoading} amount={monthly?monthly:0} arrowup={true} link="report" />
+                    <Box title={"This Month"} display = {month} isLoading={isLoading} amount={monthly?monthly:0} arrowup={true} link="report" />
                     <Box title="This Year" display = {year%1000} isLoading={isLoading} amount={yearly?yearly:0} arrowup={true} link="report" />
                 </div>
                 <Graph />

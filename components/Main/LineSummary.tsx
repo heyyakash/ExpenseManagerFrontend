@@ -33,7 +33,8 @@ const LineSummary = () => {
       if(spendData!==undefined && spendData!==null){
         let arr: number[] = []
         for(let i=1;i<=12;i++){
-          const checker = spendData?.resultMonthly?.filter(g=>g?.month===i)
+          let checker = []
+          checker = spendData?.resultMonthly?.filter(g=>g?.month===i)
           if(checker.length===0){
             arr.push(0)
           }
@@ -44,7 +45,7 @@ const LineSummary = () => {
         setState(arr)
       }
     },[spendData])
-    console.log(state) 
+
 
     const data = {
         labels:["Jan","Fe","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
@@ -53,8 +54,8 @@ const LineSummary = () => {
                 label:'Spendings',
                 data:state,
                 borderColor: 'rgb(255, 99, 159)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                tension:0,
+                backgroundColor: 'rgba(200, 55, 132, 0.5)',
+                tension:0.1,
                 pointBackgroundColor:'rgba(255,99,159)',
                 borderWidth:5,
                 

@@ -10,7 +10,6 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const DoughnutChart=()=> {
   const queryClient = useQueryClient()
   const pieData = queryClient.getQueryData('spend') as res
-  console.log(pieData)
   const labels = ['food','investment','grocery','commute','medical']
   const [state,setState] = useState<number[]>([10,10,10,10,10])
   
