@@ -10,7 +10,8 @@ module.exports = {
   ],
   theme: {
     fontFamily:{
-      'Poppins':['Poppins','sans-serif']
+      'Poppins':['Poppins','sans-serif'],
+      'Lobster':['Lobster Two','sans-serif'],
     },
     extend: {},
   },

@@ -1,9 +1,8 @@
 import React from 'react'
+import Body from '../components/Landing/Body'
 
 const index = () => {
-  return (
-    <></>
-  )
+  return <Body />
 }
 
 export default index
