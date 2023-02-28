@@ -1,9 +1,10 @@
+
 import { useRouter } from 'next/router'
 import React from 'react'
 import { useQueryClient } from 'react-query'
 import { res } from '../../../types/response'
 
-const History = () => {
+const History = () => { 
     const router = useRouter()
     console.log(router.query.username)
     const queryClient = useQueryClient()

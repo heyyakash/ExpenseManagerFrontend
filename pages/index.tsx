@@ -2,8 +2,12 @@ import React from 'react'
 
 const index = () => {
   return (
-    <div>index</div>
+    <></>
   )
 }
 
 export default index
+
+index.getLayout = ({children}:{children:JSX.Element})=>{
+  return <>{children}</>
+}

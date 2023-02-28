@@ -24,10 +24,7 @@ export default function Home({res}:{res:res}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='flex w-full h-[100vh]'>
-        <Sidebar />
-        <Main  />
-      </main>
+      <Main />
     </>
   )
 }
