@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react'
+import Features from './Features'
 import Navbar from './Navbar'
 
 const Body = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', textScroll)
-        return window.removeEventListener('scroll', textScroll)
+        return () => window.removeEventListener('scroll', textScroll)
     }, [])
 
     const textScroll = () => {
         const text :HTMLElement = document.getElementById('text') as HTMLElement
         let val = window.scrollY
+        console.log(text)
         if (text !== null) {
             text.style.marginTop = val * 1.15 + `px`
             // text?.style.scale = val
@@ -30,9 +32,7 @@ const Body = () => {
                         </h1>
                     </div>
                 </section>
-                <section className='mt-3 md:h-[100vh] w-full'>
-                    
-                </section>
+               <Features />
             </div>
         </>
     )
