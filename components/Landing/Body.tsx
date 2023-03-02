@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Features from './Features'
+import Login from './Login'
 import Navbar from './Navbar'
 
 const Body = () => {
@@ -33,6 +34,7 @@ const Body = () => {
                     </div>
                 </section>
                <Features />
+               <Login />
             </div>
         </>
     )

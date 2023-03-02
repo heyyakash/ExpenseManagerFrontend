@@ -16,7 +16,7 @@ const FeatureDescription = ({feature}:{feature:keyof map}) => {
         "Telegram" : "Spendings are added by a telegram through simple commands"
     }
     return (
-    <div className='w-[350px] flex flex-col text-white py-10 items-center px-5 rounded-xl bg-black/40'>
+    <div className='w-[350px] flex flex-col text-white py-14 items-center px-10 rounded-xl bg-black/40'>
         <BsSpeedometer2 className='text-white text-2xl' />
         <p className='font-bold'>{feature}</p>
         <p className='text-center mt-4'>{featureMap[feature]}</p>

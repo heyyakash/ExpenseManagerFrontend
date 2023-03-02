@@ -12,9 +12,9 @@ const Navbar = () => {
                 <a href = "#features" className='navlink'>Features</a>
                 <a href = "#about" className='navlink'>About</a>
             </div>
-            <div className='bg-white/95 cursor-pointer rounded-2xl px-5 py-3 font-semibold trans hover:bg-white drop-shadow-xl '>
+            <a href  = "#login" className='bg-white/95 cursor-pointer rounded-2xl px-5 py-3 font-semibold trans hover:bg-white drop-shadow-xl '>
                 Login
-            </div>
+            </a>
         </nav>
     )
 }
