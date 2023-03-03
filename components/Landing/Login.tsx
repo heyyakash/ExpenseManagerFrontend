@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 // import {GrCircleInformation} from 'react-icons/gr'
 import {HiOutlineInformationCircle} from 'react-icons/hi'
@@ -8,16 +9,32 @@ export interface payload {
     password:string
 }
 
+
 const Login = () => {
+    const router = useRouter()
     const [userid, setUserid] = useState("")
     const [password, setPassword] = useState("")
+    const [error,setError] = useState<boolean>(false)
+    const [loading,setLoading] = useState<boolean>(false)
+    const [errMsg,setErrMsg] = useState<string>("")
 
     const handleLogin =async (e: React.SyntheticEvent)  => {
         e.preventDefault()
+        setError(false)
+        setLoading(true)
         const data: payload = {userid,password}
         const res = await login(data)
-        console.log(res)
-    }
+        if(res.status){
+            console.log("Signed in")
+            localStorage.setItem('userSession',JSON.stringify(res))
+            router.push(`/user/${res.telegram_id}`)
+        }
+        else{
+            setError(true)
+            setErrMsg(res.msg)
+        }
+        setLoading(false)
+    } 
 
     return (
         <section id="login" className='p-10 w-full'>
@@ -35,6 +52,7 @@ const Login = () => {
 
                     <input type = "submit" className='text-black bg-white mt-6 h-14 p-4 rounded-xl trans hover:bg-green-400 hover:text-white font-bold block w-full cursor-pointer' value = "Login" />
                 </form>
+                <p className='text-red-500 font-semibold my-2'>{error && errMsg}</p>
                 <p className='text-slate-300 mt-4 w-[350px] text-center'>
                     <HiOutlineInformationCircle className = "text-white inline " /> To generate a new password message /pwd to the bot. You'll receive new password.
                 </p>
