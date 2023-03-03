@@ -32,7 +32,7 @@ const Summary = () => {
                 setMontlhy(0)
             }
             else{
-                console.log(data.resultMonthly[0].amount)
+                // console.log(data.resultMonthly[0].amount)
                 setMontlhy(data.resultMonthly[0].amount)
             }
 

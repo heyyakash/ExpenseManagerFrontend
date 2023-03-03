@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 // import {GrCircleInformation} from 'react-icons/gr'
 import {HiOutlineInformationCircle} from 'react-icons/hi'
+import { login } from '../../apis/fetch'
 
-interface payload {
+export interface payload {
     userid:string,
     password:string
 }
@@ -11,9 +12,11 @@ const Login = () => {
     const [userid, setUserid] = useState("")
     const [password, setPassword] = useState("")
 
-    const handleLogin = (e: React.SyntheticEvent) : void => {
+    const handleLogin =async (e: React.SyntheticEvent)  => {
         e.preventDefault()
         const data: payload = {userid,password}
+        const res = await login(data)
+        console.log(res)
     }
 
     return (

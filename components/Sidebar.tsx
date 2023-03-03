@@ -8,7 +8,7 @@ import {BiHistory} from 'react-icons/bi'
 const Sidebar = () => {
   const router = useRouter()
   // const pathname = router.pathname
-  console.log(router.asPath)
+  // console.log(router.asPath)
   return (
     <div className= 'w-[90px] hidden h-full md:flex md:flex-col items-center gap-4 md:py-5 '>
       <h1 className='text-xl text-white'>

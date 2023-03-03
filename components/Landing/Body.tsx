@@ -13,7 +13,7 @@ const Body = () => {
     const textScroll = () => {
         const text :HTMLElement = document.getElementById('text') as HTMLElement
         let val = window.scrollY
-        console.log(text)
+        // console.log(text)
         if (text !== null) {
             text.style.marginTop = val * 1.15 + `px`
             // text?.style.scale = val

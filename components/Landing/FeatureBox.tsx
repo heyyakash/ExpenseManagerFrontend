@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { IconType } from 'react-icons'
 
 const FeatureBox = ({children,text,setFeature}:{children:ReactNode,text:string,setFeature:React.Dispatch<React.SetStateAction<string>>}) => {
-    console.log(children,text)
+    // console.log(children,text)
     // console.log(props)
     return (
         <div className='flex flex-col gap-2 items-center'>
