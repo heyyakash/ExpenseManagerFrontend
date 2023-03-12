@@ -1,12 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {BiHistory} from 'react-icons/bi'
+import { loginResponse } from '../types/response'
 
 
 const Sidebar = () => {
   const router = useRouter()
+  const [userData,setUserData] = useState<loginResponse | null>(null)
+  useEffect(()=>{
+    const data: loginResponse = JSON.parse(localStorage.getItem('userSession') as string)
+    if(!data) router.push('/')
+    else setUserData(data)
+  },[])
   // const pathname = router.pathname
   // console.log(router.asPath)
   return (
@@ -15,7 +22,7 @@ const Sidebar = () => {
         <Image src={'/logo.png'} alt = "logo" height={60} width = {50} />
       </h1>
       <div className='flex md:flex-col'>
-        <Link href={`${router.asPath}/history`} className='p-2 hover:bg-blue-900/30 rounded-xl cursor-pointer md:mt-[3.5rem]'>
+        <Link href={`/user/history/${userData?.telegram_id}`} className='p-2 hover:bg-blue-900/30 rounded-xl cursor-pointer md:mt-[3.5rem]'>
         <BiHistory className='text-white font-bold text-2xl' />
         </Link>
       </div>

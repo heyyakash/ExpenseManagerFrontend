@@ -28,3 +28,13 @@ export type res = {
     resultYearly:yearlySpendObject[]
     resultDailyCurrentMonth:dailySpendCurrentMonthObject[]
 }
+
+
+export type loginResponse = {
+    status:boolean,
+    msg:string,
+    token:string,
+    first_name:string,
+    last_name:string,
+    telegram_id:string
+}

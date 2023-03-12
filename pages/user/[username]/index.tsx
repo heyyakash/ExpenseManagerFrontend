@@ -6,15 +6,26 @@ import { expenditureToday } from '../../../apis/fetch'
 import { res } from '../../../types/response'
 import { useQuery } from 'react-query'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export default function Home({res}:{res:res}) {
   const router = useRouter()
+  const [user,setUser] = useState()
   const fetchData = async () => {
     const username = router.query.username as string
     const { date, month, year } = datefunction()
     const res = await expenditureToday(username.toString(), date, month, year)
     return res
   }
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('userSession') as string)
+    if(!user) router.push('/')
+    else setUser(user)
+  }, [])
+  
+ 
+
   const {data} = useQuery('spend',fetchData,{initialData:res})
   return (
     <>

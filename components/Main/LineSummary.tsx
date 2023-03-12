@@ -37,6 +37,7 @@ const LineSummary = () => {
         for(let i=1;i<=12;i++){
           let checker = []
           checker = spendData?.resultMonthly?.filter(g=>g?.month===i)
+          console.log(spendData)
           if(checker.length===0){
             if(i>month){
               arr.push(null)
